@@ -12,8 +12,13 @@ namespace Biliárd2._0
         {
             List<int> golyok = new List<int>();
             Feltolto(golyok);
-            int leesett=LeesoSorsolo(golyok);
-            Kiíró(golyok);
+            int leesett; 
+            do
+            {
+                leesett = LeesoSorsolo(golyok);
+                Kiíró(golyok);
+                Console.WriteLine();
+            } while (golyok.Contains(8));
             Console.ReadKey();
         }
 
@@ -29,7 +34,7 @@ namespace Biliárd2._0
         {
             Random rnd = new Random();
             int sorsolt = rnd.Next(golyok.Count);
-            golyok.Remove(sorsolt);
+            golyok.Remove(golyok[sorsolt]);
             return golyok[sorsolt];
         }
 
