@@ -10,7 +10,18 @@ namespace Biliárd2._0
     {
         static void Main(string[] args)
         {
+            List<int> golyok = new List<int>();
+            Feltolto(golyok);
+
             Console.ReadKey();
+        }
+
+        static void Feltolto(List<int> golyok)
+        {
+            for (int i = 1; i <= 15; i++)
+            {
+                golyok.Add(i);
+            }
         }
     }
 }
