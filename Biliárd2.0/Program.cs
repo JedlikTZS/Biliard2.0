@@ -12,7 +12,10 @@ namespace Biliárd2._0
         {
             List<int> golyok = new List<int>();
             Feltolto(golyok);
-
+            foreach (int golyo in golyok)
+            {
+                Console.WriteLine(golyo);
+            }
             Console.ReadKey();
         }
 
