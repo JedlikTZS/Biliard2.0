@@ -19,6 +19,14 @@ namespace Biliárd2._0
                 Kiíró(golyok);
                 Console.WriteLine();
             } while (golyok.Contains(8));
+            if (golyok.Count==0)
+            {
+                Console.WriteLine("Nyertél!");
+            }
+            else
+            {
+                Console.WriteLine("Vesztettél!");
+            }
             Console.ReadKey();
         }
 
@@ -34,8 +42,10 @@ namespace Biliárd2._0
         {
             Random rnd = new Random();
             int sorsolt = rnd.Next(golyok.Count);
+            int seged = golyok[sorsolt];
+            Console.WriteLine($"A leesett golyó: {seged}");
             golyok.Remove(golyok[sorsolt]);
-            return golyok[sorsolt];
+            return seged;
         }
 
         static void Feltolto(List<int> golyok)
